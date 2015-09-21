@@ -15,7 +15,6 @@ import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
-import com.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 import com.nineoldandroids.view.ViewHelper;
 
 public class MainActivity extends Activity {
@@ -56,7 +55,7 @@ public class MainActivity extends Activity {
         mHeaderLogo = (ImageView) findViewById(R.id.header_logo);
         mHeader = findViewById(R.id.header);
 
-        mListView= (ScrollView) findViewById(R.id.pager);
+        mListView = (ScrollView) findViewById(R.id.pager);
         mSpannableString = new SpannableString(getString(R.string.actionbar_title));
         mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
         View placeHolderView = getLayoutInflater().inflate(R.layout.view_header_placeholder, mListView, false);
@@ -73,8 +72,25 @@ public class MainActivity extends Activity {
             }
         });
 
-//		ViewHelper.setAlpha(getActionBarIconView(), 0f);
 
+//        mListView = (ListView) findViewById(R.id.pager);
+//        mListView.setAdapter(new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, android.R.id.text1, mListItems));
+//
+//        mSpannableString = new SpannableString(getString(R.string.actionbar_title));
+//        mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
+//
+//
+//        View placeHolderView = getLayoutInflater().inflate(R.layout.view_header_placeholder, mListView, false);
+//        mListView.addHeaderView(placeHolderView);
+//        mListView.setOnScrollListener(this);
+//
+//        ArrayList<String> mListItems = new ArrayList<String>();
+//
+//        for (int i = 1; i <= 100; i++) {
+//            mListItems.add(i + ". item - currnet page: " + (1));
+//        }
+
+//		ViewHelper.setAlpha(getActionBarIconView(), 0f);
 //        getSupportActionBar().setBackgroundDrawable(null);
     }
 
@@ -125,8 +141,6 @@ public class MainActivity extends Activity {
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
             getTheme().resolveAttribute(android.R.attr.actionBarSize, mTypedValue, true);
-        } else {
-            getTheme().resolveAttribute(R.attr.actionBarSize, mTypedValue, true);
         }
 
         mActionBarHeight = TypedValue.complexToDimensionPixelSize(mTypedValue.data, getResources().getDisplayMetrics());

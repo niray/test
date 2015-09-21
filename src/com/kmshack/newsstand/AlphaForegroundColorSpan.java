@@ -1,4 +1,4 @@
-package com.flavienlaurent.notboringactionbar;
+package com.kmshack.newsstand;
 
 import android.graphics.Color;
 import android.os.Parcel;
