@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="AppTheme" parent="TransparentTheme"></style>
+
+    <style name="TransparentTheme" parent="@style/android:Theme.Light">
+    </style>
+
+
+</resources>
